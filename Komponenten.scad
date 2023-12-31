@@ -99,7 +99,7 @@ module PlasticScrewsAll(){
 
 module InnenMasse(){
     x_PowerSwitch=25;
-    y_PowerSwitch=33;
+    y_PowerSwitch=34;
 difference(){
         cube([b, t, h]);
         t_Auflage=20;
@@ -113,11 +113,11 @@ difference(){
     y_AudioIn=13;
     translate([x_PowerSwitch, -d, y_PowerSwitch]) rotate([-90, 0, 0]) PowerSwitchNutPart();
     translate([x_AudioIn, 0, y_AudioIn]) rotate([90, 0, 0]) AudioInStecker();
-    translate([x_AudioIn-2,           0, 33]) rotate([90, 0, 0]) AudioOutStecker();
-    translate([x_AudioIn+2+s_AudioIn, 0, 33]) rotate([90, 0, 0]) AudioOutStecker();
+    translate([x_AudioIn-2,           0, 34]) rotate([90, 0, 0]) AudioOutStecker();
+    translate([x_AudioIn+2+s_AudioIn, 0, 34]) rotate([90, 0, 0]) AudioOutStecker();
     translate([0, 67, -d]) Airgaps();
-    translate([48,      0, 38]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED1
-    translate([48,      0, 28]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED2
+    translate([48,      0, 39]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED1
+    translate([48,      0, 29]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED2
     translate([b-19-6.5, t, 7]) cube([19, d, 24]); // Netzstecker
     s_ScrewHoles=91.5;
     translate([4.5,              9, -d]) cylinder(h=10, d=3.5); // Schraubenloch 1
