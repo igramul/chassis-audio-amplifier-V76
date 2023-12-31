@@ -118,7 +118,7 @@ difference(){
     translate([0, 67, -d]) Airgaps();
     translate([48,      0, 38]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED1
     translate([48,      0, 28]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED2
-    translate([b-19-6.5, t, 6.5]) cube([19, d, 24]); // Netzstecker
+    translate([b-19-6.5, t, 7]) cube([19, d, 24]); // Netzstecker
     s_ScrewHoles=91.5;
     translate([4.5,              9, -d]) cylinder(h=10, d=3.5); // Schraubenloch 1
     translate([4.5,              9, -d]) cylinder(h=3,  d=6); // Schraubenkopf 1
