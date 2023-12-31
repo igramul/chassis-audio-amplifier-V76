@@ -34,6 +34,21 @@ module AudioOutStecker(){
 }
 //AudioOutStecker();
 
+module LedBlende(){
+    height=6;
+    cylinder(h=height, d=8);
+    translate([0, 10, 0]) cylinder(h=height, d=8);
+    translate([0, 5, height/2]) cube([8, 10, height], center=true);
+}
+//LedBlende();
+
+module LedLoecher(){
+    height=6;
+    cylinder(h=height, d=5.1);
+    translate([0, 10, 0]) cylinder(h=height, d=5.1);
+}
+//LedLoecher();
+
 module DCKabelEingang(){
     height=30;
     difference() {
@@ -108,6 +123,7 @@ difference(){
         translate([b-b_AC-9, 0, 0]) cube([9, t_Auflage, h_Auflage]); // Auflage 2
         translate([b-b_AC, 0, 0]) DCKabelEingang();
         translate([x_PowerSwitch, -d, y_PowerSwitch]) rotate([-90, 0, 0]) PowerSwitch();
+        translate([48, 6-d, 29]) rotate([90, 0, 0]) LedBlende();
     }
     x_AudioIn=72;
     y_AudioIn=13;
@@ -116,8 +132,7 @@ difference(){
     translate([x_AudioIn-2,           0, 34]) rotate([90, 0, 0]) AudioOutStecker();
     translate([x_AudioIn+2+s_AudioIn, 0, 34]) rotate([90, 0, 0]) AudioOutStecker();
     translate([0, 67, -d]) Airgaps();
-    translate([48,      0, 39]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED1
-    translate([48,      0, 29]) rotate([90, 0, 0]) cylinder(h=d, d=5.1); // LED2
+    translate([48,      6-d, 29]) rotate([90, 0, 0]) LedLoecher();
     translate([b-19-6.5, t, 7]) cube([19, d, 24]); // Netzstecker
     s_ScrewHoles=91.5;
     translate([4.5,              9, -d]) cylinder(h=10, d=3.5); // Schraubenloch 1
