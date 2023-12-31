@@ -166,9 +166,11 @@ module DeckelInnen(){
     height=h-h_AC;
     difference(){
         union(){
-            translate([t1, t1, h-height]) cube([10, 62, height]);
-            translate([35+6, t-10-t1, h-height]) cube([18, 10, height]);
-            translate([b-b_AC-t1, 1, h-height]) cube([b_AC, t-2, height]);
+            translate([t1, t1, h-height]) cube([b-2*t1, 3, height]); // Front
+            translate([t1, t1, h-height]) cube([10, 62, height]); // Left Side
+            translate([t1, t-3-t1, h-height]) cube([b-2*t1, 3, height]); // Back
+            translate([35+6, t-10-t1, h-height]) cube([18, 10, height]); // Back Screw
+            translate([b-b_AC-t1, 1, h-height]) cube([b_AC, t-2, height]); // Right Side
         }
         PlasticScrewsAll();
     }
